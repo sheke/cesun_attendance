@@ -7,7 +7,7 @@ class CheckInsControllerTest < ActionController::TestCase
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:check_ins)
+    assert_not_nil assigns(:check_in)
   end
 
   test "should get new" do
@@ -16,7 +16,7 @@ class CheckInsControllerTest < ActionController::TestCase
   end
 
   test "should create check_in" do
-    assert_difference('check_in.count') do
+    assert_difference('CheckIn.count') do
       post :create, :check_in => @check_in.attributes
     end
 
@@ -39,7 +39,7 @@ class CheckInsControllerTest < ActionController::TestCase
   end
 
   test "should destroy check_in" do
-    assert_difference('check_in.count', -1) do
+    assert_difference('CheckIn.count', -1) do
       delete :destroy, :id => @check_in.to_param
     end
 

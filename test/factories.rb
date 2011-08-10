@@ -21,6 +21,6 @@ end
 Factory.define :check_in do |a|
   a.indate      Time.now
   a.enddate    Time.now
-  a.status      'Pendiente'
+  a.status      'Attendance'
   a.teachers_id 87
 end

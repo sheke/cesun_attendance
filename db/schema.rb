@@ -10,14 +10,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110712015224) do
+ActiveRecord::Schema.define(:version => 20110809235850) do
 
   create_table "campus", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-  
+
   create_table "check_ins", :force => true do |t|
     t.datetime "indate"
     t.datetime "enddate"
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(:version => 20110712015224) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-  
+
   create_table "roles", :force => true do |t|
     t.string  "name",              :limit => 40
     t.string  "authorizable_type", :limit => 40
