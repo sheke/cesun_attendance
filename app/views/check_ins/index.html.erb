@@ -1,0 +1,31 @@
+<h1>Lista de Checadas</h1>
+
+<table>
+  <tr>
+    <th>Maestro</th>
+    <th>Entrada</th>
+    <th>Salida</th>
+    <th>Status</th>
+    
+    <th></th>
+    <th></th>
+	<th></th>
+  </tr>
+
+<% @check_in.each do |check_in| %>
+  <tr>
+	<td><%= check_in.teachers_id %></td>
+    <td><%= check_in.indate %></td>
+    <td><%= check_in.enddate %></td>
+    <td><%= check_in.status %></td>
+	
+    <td><%= link_to 'Mostrar', check_in %></td>
+    <td><%= link_to 'Editar', edit_check_in_path(check_in) %></td>
+    <td><%= link_to 'Borrar', check_in, :confirm => 'Estas seguro de borrarlo?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Crear checada', new_check_in_path %>

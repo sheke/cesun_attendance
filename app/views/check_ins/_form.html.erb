@@ -1,0 +1,39 @@
+<%= form_for(@check_in) do |f| %>
+  <% if @check_in.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@check_in.errors.count, "error") %> prohibited this check in from being saved:</h2>
+      <ul>
+      <% @check_in.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+   <br />
+    <%= f.label 'Ingrese su numero de Maestro' %><br />
+    <%= f.text_field :teachers_id %>
+  </div>
+    <div class="field">
+    <%= f.label :status %><br /> 
+	<%= f.select(:status, [['Attendance', 'Attendance'],                                   
+						['Absence', 'Absence'],                                   
+						['Reposition', 'Reposition']                                  
+						],{ :prompt => "Select status"}                                  
+						) %> 						
+  </div>
+  <br /> 
+  <div class="field">
+    <%= f.label 'Fecha y hora de entrada' %><br /> 
+	    <%= f.datetime_select :indate %>
+  </div>
+  <div class="field">
+  <br /> 
+    <%= f.label 'Fecha y hora de salida' %><br /> 
+	   <%= f.datetime_select :enddate %>
+  </div>
+</br>
+  <div class="actions">
+    <%= f.submit   %>
+  </div>
+<% end %>

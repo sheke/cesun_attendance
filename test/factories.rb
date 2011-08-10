@@ -13,3 +13,14 @@ Factory.define :study_plan do |s|
   s.sequence( :name ) { |n| "study plan #{n}" }
   s.association :campus
 end
+
+Factory.define :shift do |f|
+  f.description 'test123'
+end
+
+Factory.define :check_in do |a|
+  a.indate      Time.now
+  a.enddate    Time.now
+  a.status      'Pendiente'
+  a.teachers_id 87
+end

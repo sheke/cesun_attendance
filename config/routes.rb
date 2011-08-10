@@ -1,6 +1,6 @@
 CesunAttendance::Application.routes.draw do
   devise_for :users
-
+  resources :check_ins 
   devise_scope :user do
     root :to => 'devise/sessions#new', :via => :get
   end
